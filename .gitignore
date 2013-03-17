@@ -8,3 +8,5 @@
 /.lein-deps-sum
 
 .lein-plugins/checksum
+
+.DS_Store
