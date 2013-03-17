@@ -1,0 +1,375 @@
+<html>
+  <head>
+    <title>Overview - Trade With Confidence (TWC) API documentation</title>
+    <link href="static/favicon.png" rel="icon" />
+    <link href="static/favicon.png" rel="shortcut icon" />
+    <link media="all" type="text/css" href="static/clojure.css" rel="stylesheet" />
+    <link media="all" type="text/css" href="static/wiki.css" rel="stylesheet" />
+    <link media="all" type="text/css" href="static/internal.css" rel="stylesheet" />
+    <style>.menuWrapper{height: 36px;}</style>
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" href="http://www.wikispaces.com/_/2009051601/s/internal_ie.css" type="text/css" />
+    <![endif]-->
+  </head>
+<!--
+This document was auto-generated from the source by the clojure autodoc system.
+To report errors or ask questions about the overall documentation structure, formatting,
+etc., contact Tom Faulhaber (google mail name: tomfaulhaber).
+For errors in the documentation of a particular namespace, contact the author of that
+namespace.
+-->
+  <body>
+    <div id="AllContentContainer">
+      <div id="Header">
+	<a id="Logo" href="index.html"><img alt="Clojure" height="100" width="100" src="static/clojure-icon.gif" /></a>
+	<h1><a title="page header title" id="page-header" href="index.html">TWC API Documentation</a></h1>
+      </div>
+      <div id="leftcolumn"><div style="text-align: center;"></div>
+<div class="menu">
+  <div class="WikiCustomNav WikiElement wiki">
+    <span class="toc-header"><span id="project-name">Trade With Confidence (TWC)</span> <span id="version"></span> API</span><br />
+    <ul>
+      <li><a class="wiki_link" href="index.html">Overview</a></li>
+      <li><a class="wiki_link" href="api-index.html">API Index</a></li>
+    </ul>
+    <div class="NamespaceTOC">
+      <span class="toc-header">Namespaces</span>
+      <ul id="left-sidebar-list">
+        <li><a href="tradewc.charts.stock-charts-api.html" class="wiki_link">tradewc.charts.stock-charts</a></li><li><a href="tradewc.controllers.chart-controller-api.html" class="wiki_link">tradewc.controllers.chart-controller</a></li><li><a href="tradewc.controllers.main-controller-api.html" class="wiki_link">tradewc.controllers.main-controller</a></li><li><a href="tradewc.controllers.neuralnet-controller-api.html" class="wiki_link">tradewc.controllers.neuralnet-controller</a></li><li><a href="tradewc.controllers.observers-api.html" class="wiki_link">tradewc.controllers.observers</a></li><li><a href="tradewc.controllers.prediction-list-controller-api.html" class="wiki_link">tradewc.controllers.prediction-list-controller</a></li><li><a href="tradewc.controllers.query-table-controller-api.html" class="wiki_link">tradewc.controllers.query-table-controller</a></li><li><a href="tradewc.controllers.start-controller-api.html" class="wiki_link">tradewc.controllers.start-controller</a></li><li><a href="tradewc.controllers.stock-data-controller-api.html" class="wiki_link">tradewc.controllers.stock-data-controller</a></li><li><a href="tradewc.controllers.stock-table-controller-api.html" class="wiki_link">tradewc.controllers.stock-table-controller</a></li><li><a href="tradewc.main.core-api.html" class="wiki_link">tradewc.main.core</a></li><li><a href="tradewc.stock-model.stock-data-api.html" class="wiki_link">tradewc.stock-model.stock-data</a></li><li><a href="tradewc.views.generic-comp-api.html" class="wiki_link">tradewc.views.generic-comp</a></li><li><a href="tradewc.views.main-view-api.html" class="wiki_link">tradewc.views.main-view</a></li><li><a href="tradewc.views.start-view-api.html" class="wiki_link">tradewc.views.start-view</a></li><li><a href="tradewc.views.stock-config-view-api.html" class="wiki_link">tradewc.views.stock-config-view</a></li><li><a href="tradewc.views.table-view-api.html" class="wiki_link">tradewc.views.table-view</a></li>
+      </ul>
+    </div>
+    
+    <a href="http://clojure.org" class="wiki_link">Clojure Home</a>
+  </div>
+</div>
+</div>
+      <div id="rightcolumn">
+	<div id="Content">
+	  <div class="contentBox"><div class="innerContentBox">
+              <div id="content_view" class="wiki wikiPage">
+                <div id="right-sidebar"><div id="toc">
+  <h1 class="nopad">Table of Contents</h1>
+  <div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.charts.stock-charts">tradewc.charts.stock-charts</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.controllers.chart-controller">tradewc.controllers.chart-controller</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.controllers.main-controller">tradewc.controllers.main-controller</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.controllers.neuralnet-controller">tradewc.controllers.neuralnet-controller</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.controllers.observers">tradewc.controllers.observers</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.controllers.prediction-list-controller">tradewc.controllers.prediction-list-controller</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.controllers.query-table-controller">tradewc.controllers.query-table-controller</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.controllers.start-controller">tradewc.controllers.start-controller</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.controllers.stock-data-controller">tradewc.controllers.stock-data-controller</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.controllers.stock-table-controller">tradewc.controllers.stock-table-controller</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.main.core">tradewc.main.core</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.stock-model.stock-data">tradewc.stock-model.stock-data</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.views.generic-comp">tradewc.views.generic-comp</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.views.main-view">tradewc.views.main-view</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.views.start-view">tradewc.views.start-view</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.views.stock-config-view">tradewc.views.stock-config-view</a>
+    
+    <br />
+  </div><div style="margin-left: 1em;" class="toc-section">
+    <a href="#tradewc.views.table-view">tradewc.views.table-view</a>
+    
+    <br />
+  </div>
+</div>
+</div>
+                <div id="content-tag"><h1 id="toc0">API Overview - <span id="header-project">Trade With Confidence (TWC)</span> <span id="header-version"></span></h1>
+<br />
+<div id="project-description"><p>TWC is a stock price prediciton tool which uses neural networks
+                          to predict future stock prices for any stock listed on the stock market.</p>
+                          <p>TWC uses the following libraries, click on any link to go straight to an explanation of the library:</p>
+<ul>
+<li><a href="http://incanter.org/">Incanter</a></li>
+<li><a href="http://www.heatonresearch.com/encog">Encog</a></li>
+<li><a href="http://github.com/daveray/seesaw/wiki">Seesaw</a></li>
+<li><a href="http://joda-time.sourceforge.net/">Joda-Time</a></li>
+<li><a href="http://itextpdf.com/">iText</a></li>
+</ul></div>
+<br />
+<div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.charts.stock-charts">tradewc.charts.stock-charts</h2>
+  <span id="author-line">by <span id="author-name">Adam Markham</span><br /></span>
+  <a href="tradewc.charts.stock-charts-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr">Namespace that contains core functions for processing and viewing stock charts.</pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.charts.stock-charts-api.html#tradewc.charts.stock-charts/candle-stick" id="var-tag">candle-stick</a> </span><span id="var-link"><a href="tradewc.charts.stock-charts-api.html#tradewc.charts.stock-charts/map-to-dataset" id="var-tag">map-to-dataset</a> </span><span id="var-link"><a href="tradewc.charts.stock-charts-api.html#tradewc.charts.stock-charts/save-chart" id="var-tag">save-chart</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.controllers.chart-controller">tradewc.controllers.chart-controller</h2>
+  <span id="author-line">by <span id="author-name">Adam Markham</span><br /></span>
+  <a href="tradewc.controllers.chart-controller-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr">Namespace that contains core functions for generating charts to
+represent stock data with.</pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.controllers.chart-controller-api.html#tradewc.controllers.chart-controller/get-candlestick" id="var-tag">get-candlestick</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.controllers.main-controller">tradewc.controllers.main-controller</h2>
+  <span id="author-line">by <span id="author-name">Adam Markham</span><br /></span>
+  <a href="tradewc.controllers.main-controller-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr">Namespace that contains core functions starting the application.</pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.controllers.main-controller-api.html#tradewc.controllers.main-controller/build-main-controller" id="var-tag">build-main-controller</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.controllers.neuralnet-controller">tradewc.controllers.neuralnet-controller</h2>
+  
+  <a href="tradewc.controllers.neuralnet-controller-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.controllers.neuralnet-controller-api.html#tradewc.controllers.neuralnet-controller/cancel-neural-net" id="var-tag">cancel-neural-net</a> </span><span id="var-link"><a href="tradewc.controllers.neuralnet-controller-api.html#tradewc.controllers.neuralnet-controller/create-neural-net" id="var-tag">create-neural-net</a> </span><span id="var-link"><a href="tradewc.controllers.neuralnet-controller-api.html#tradewc.controllers.neuralnet-controller/create-observer" id="var-tag">create-observer</a> </span><span id="var-link"><a href="tradewc.controllers.neuralnet-controller-api.html#tradewc.controllers.neuralnet-controller/evaluate-neural-net" id="var-tag">evaluate-neural-net</a> </span><span id="var-link"><a href="tradewc.controllers.neuralnet-controller-api.html#tradewc.controllers.neuralnet-controller/get-task" id="var-tag">get-task</a> </span><span id="var-link"><a href="tradewc.controllers.neuralnet-controller-api.html#tradewc.controllers.neuralnet-controller/predict-neural-net" id="var-tag">predict-neural-net</a> </span><span id="var-link"><a href="tradewc.controllers.neuralnet-controller-api.html#tradewc.controllers.neuralnet-controller/prediction-dialog" id="var-tag">prediction-dialog</a> </span><span id="var-link"><a href="tradewc.controllers.neuralnet-controller-api.html#tradewc.controllers.neuralnet-controller/swap-neural-net" id="var-tag">swap-neural-net</a> </span><span id="var-link"><a href="tradewc.controllers.neuralnet-controller-api.html#tradewc.controllers.neuralnet-controller/train-neural-net" id="var-tag">train-neural-net</a> </span><span id="var-link"><a href="tradewc.controllers.neuralnet-controller-api.html#tradewc.controllers.neuralnet-controller/training-not-complete" id="var-tag">training-not-complete</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.controllers.observers">tradewc.controllers.observers</h2>
+  
+  <a href="tradewc.controllers.observers-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Public variables and functions:
+  <br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.controllers.prediction-list-controller">tradewc.controllers.prediction-list-controller</h2>
+  <span id="author-line">by <span id="author-name">Adam Markham</span><br /></span>
+  <a href="tradewc.controllers.prediction-list-controller-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr">Namespace that contains core functions for controlling the list of predictions</pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.controllers.prediction-list-controller-api.html#tradewc.controllers.prediction-list-controller/remove-prediction" id="var-tag">remove-prediction</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.controllers.query-table-controller">tradewc.controllers.query-table-controller</h2>
+  
+  <a href="tradewc.controllers.query-table-controller-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.controllers.query-table-controller-api.html#tradewc.controllers.query-table-controller/add-to-predictions" id="var-tag">add-to-predictions</a> </span><span id="var-link"><a href="tradewc.controllers.query-table-controller-api.html#tradewc.controllers.query-table-controller/search-symbol" id="var-tag">search-symbol</a> </span><span id="var-link"><a href="tradewc.controllers.query-table-controller-api.html#tradewc.controllers.query-table-controller/update-stock-table" id="var-tag">update-stock-table</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.controllers.start-controller">tradewc.controllers.start-controller</h2>
+  <span id="author-line">by <span id="author-name">Adam Markham</span><br /></span>
+  <a href="tradewc.controllers.start-controller-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr">Namespace that contains core functions for starting off the applications main menu.</pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.controllers.start-controller-api.html#tradewc.controllers.start-controller/start-tradewc" id="var-tag">start-tradewc</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.controllers.stock-data-controller">tradewc.controllers.stock-data-controller</h2>
+  
+  <a href="tradewc.controllers.stock-data-controller-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.controllers.stock-data-controller-api.html#tradewc.controllers.stock-data-controller/build-view" id="var-tag">build-view</a> </span><span id="var-link"><a href="tradewc.controllers.stock-data-controller-api.html#tradewc.controllers.stock-data-controller/get-dates" id="var-tag">get-dates</a> </span><span id="var-link"><a href="tradewc.controllers.stock-data-controller-api.html#tradewc.controllers.stock-data-controller/load-all-predictions" id="var-tag">load-all-predictions</a> </span><span id="var-link"><a href="tradewc.controllers.stock-data-controller-api.html#tradewc.controllers.stock-data-controller/remove-prediction" id="var-tag">remove-prediction</a> </span><span id="var-link"><a href="tradewc.controllers.stock-data-controller-api.html#tradewc.controllers.stock-data-controller/save-all-predictions" id="var-tag">save-all-predictions</a> </span><span id="var-link"><a href="tradewc.controllers.stock-data-controller-api.html#tradewc.controllers.stock-data-controller/save-to-csv" id="var-tag">save-to-csv</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.controllers.stock-table-controller">tradewc.controllers.stock-table-controller</h2>
+  
+  <a href="tradewc.controllers.stock-table-controller-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.controllers.stock-table-controller-api.html#tradewc.controllers.stock-table-controller/get-stock-table" id="var-tag">get-stock-table</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.main.core">tradewc.main.core</h2>
+  <span id="author-line">by <span id="author-name">Adam Markham</span><br /></span>
+  <a href="tradewc.main.core-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr">Namespace that contains core functions for starting the application. Its
+is where the main method is invoked from.</pre>
+  
+  
+  
+  Public variables and functions:
+  <br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data">tradewc.stock-model.stock-data</h2>
+  
+  <a href="tradewc.stock-model.stock-data-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/add-to-predictions" id="var-tag">add-to-predictions</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/convert-stock-data" id="var-tag">convert-stock-data</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/create-prediction" id="var-tag">create-prediction</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/get-prediction-at" id="var-tag">get-prediction-at</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/get-predictions" id="var-tag">get-predictions</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/get-stock-data-as-map" id="var-tag">get-stock-data-as-map</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/get-stockmarket-data-src" id="var-tag">get-stockmarket-data-src</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/load-json-map" id="var-tag">load-json-map</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/load-predictions" id="var-tag">load-predictions</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/map-to-json" id="var-tag">map-to-json</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/query-stock-symbol" id="var-tag">query-stock-symbol</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/remove-prediction" id="var-tag">remove-prediction</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/replace-predict" id="var-tag">replace-predict</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/save-predictions" id="var-tag">save-predictions</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/save-to" id="var-tag">save-to</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/update-actual-eval" id="var-tag">update-actual-eval</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/update-predicted-eval" id="var-tag">update-predicted-eval</a> </span><span id="var-link"><a href="tradewc.stock-model.stock-data-api.html#tradewc.stock-model.stock-data/update-prediction" id="var-tag">update-prediction</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.views.generic-comp">tradewc.views.generic-comp</h2>
+  
+  <a href="tradewc.views.generic-comp-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.views.generic-comp-api.html#tradewc.views.generic-comp/msg" id="var-tag">msg</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.views.main-view">tradewc.views.main-view</h2>
+  
+  <a href="tradewc.views.main-view-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.views.main-view-api.html#tradewc.views.main-view/main-frame" id="var-tag">main-frame</a> </span><span id="var-link"><a href="tradewc.views.main-view-api.html#tradewc.views.main-view/menu-items" id="var-tag">menu-items</a> </span><span id="var-link"><a href="tradewc.views.main-view-api.html#tradewc.views.main-view/menus" id="var-tag">menus</a> </span><span id="var-link"><a href="tradewc.views.main-view-api.html#tradewc.views.main-view/no-stock-dialog" id="var-tag">no-stock-dialog</a> </span><span id="var-link"><a href="tradewc.views.main-view-api.html#tradewc.views.main-view/render-item" id="var-tag">render-item</a> </span><span id="var-link"><a href="tradewc.views.main-view-api.html#tradewc.views.main-view/show" id="var-tag">show</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.views.start-view">tradewc.views.start-view</h2>
+  <span id="author-line">by <span id="author-name">Adam Markham</span><br /></span>
+  <a href="tradewc.views.start-view-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr">Namespace that contains core functions for viewing the start view.</pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.views.start-view-api.html#tradewc.views.start-view/show" id="var-tag">show</a> </span><span id="var-link"><a href="tradewc.views.start-view-api.html#tradewc.views.start-view/start-frame" id="var-tag">start-frame</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.views.stock-config-view">tradewc.views.stock-config-view</h2>
+  
+  <a href="tradewc.views.stock-config-view-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.views.stock-config-view-api.html#tradewc.views.stock-config-view/build-prediction-frame" id="var-tag">build-prediction-frame</a> </span><span id="var-link"><a href="tradewc.views.stock-config-view-api.html#tradewc.views.stock-config-view/search-stock" id="var-tag">search-stock</a> </span><span id="var-link"><a href="tradewc.views.stock-config-view-api.html#tradewc.views.stock-config-view/table-columns" id="var-tag">table-columns</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.views.table-view">tradewc.views.table-view</h2>
+  
+  <a href="tradewc.views.table-view-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Public variables and functions:
+  <span id="var-link"><a href="tradewc.views.table-view-api.html#tradewc.views.table-view/menus" id="var-tag">menus</a> </span><span id="var-link"><a href="tradewc.views.table-view-api.html#tradewc.views.table-view/stock-table" id="var-tag">stock-table</a> </span><br />
+  
+</div>
+</div>
+              </div>
+            </div>
+          </div>
+	</div>
+	<div id="foot">
+	  <div style="text-align: center;" id="copyright">No copyright info </div>
+	</div>
+      </div>
+      <div id="DesignedBy">Logo &amp; site design by <a title="Visit Tom Hickey's website." href="http://www.tomhickey.com">Tom Hickey</a>.<br />
+      Clojure auto-documentation system by Tom Faulhaber.</div>
+    </div>
+    <!-- /AllContentContainer -->
+  </body>
+
+</html>

@@ -1,0 +1,24 @@
+-classpath
+'/Users/mysteryman101/NetBeansProjects/TradeWithConfidence/target/classes:/Users/mysteryman101/.m2/repository/joda-time/joda-time/2.0/joda-time-2.0.jar:/Users/mysteryman101/.m2/repository/org/encog/encog-core/3.0.1/encog-core-3.0.1.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/mysteryman101/NetBeansProjects/TradeWithConfidence/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2012. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/mysteryman101/NetBeansProjects/TradeWithConfidence/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'TradeWithConfidence 1.0-SNAPSHOT API'
+-linkoffline
+'http://download.oracle.com/javase/6/docs/api' '/Users/mysteryman101/NetBeansProjects/TradeWithConfidence/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'TradeWithConfidence 1.0-SNAPSHOT API'

@@ -1,0 +1,324 @@
+<html>
+  <head>
+    <title>tradewc.stock-model.stock-data - Trade With Confidence (TWC) API documentation</title>
+    <link href="static/favicon.png" rel="icon" />
+    <link href="static/favicon.png" rel="shortcut icon" />
+    <link media="all" type="text/css" href="static/clojure.css" rel="stylesheet" />
+    <link media="all" type="text/css" href="static/wiki.css" rel="stylesheet" />
+    <link media="all" type="text/css" href="static/internal.css" rel="stylesheet" />
+    <style>.menuWrapper{height: 36px;}</style>
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" href="http://www.wikispaces.com/_/2009051601/s/internal_ie.css" type="text/css" />
+    <![endif]-->
+  </head>
+<!--
+This document was auto-generated from the source by the clojure autodoc system.
+To report errors or ask questions about the overall documentation structure, formatting,
+etc., contact Tom Faulhaber (google mail name: tomfaulhaber).
+For errors in the documentation of a particular namespace, contact the author of that
+namespace.
+-->
+  <body>
+    <div id="AllContentContainer">
+      <div id="Header">
+	<a id="Logo" href="index.html"><img alt="Clojure" height="100" width="100" src="static/clojure-icon.gif" /></a>
+	<h1><a title="page header title" id="page-header" href="index.html">TWC API Documentation</a></h1>
+      </div>
+      <div id="leftcolumn"><div style="text-align: center;"></div>
+<div class="menu">
+  <div class="WikiCustomNav WikiElement wiki">
+    <span class="toc-header"><span id="project-name">Trade With Confidence (TWC)</span> <span id="version"></span> API</span><br />
+    <ul>
+      <li><a class="wiki_link" href="index.html">Overview</a></li>
+      <li><a class="wiki_link" href="api-index.html">API Index</a></li>
+    </ul>
+    <div class="NamespaceTOC">
+      <span class="toc-header">Namespaces</span>
+      <ul id="left-sidebar-list">
+        <li><a href="tradewc.charts.stock-charts-api.html" class="wiki_link">tradewc.charts.stock-charts</a></li><li><a href="tradewc.controllers.chart-controller-api.html" class="wiki_link">tradewc.controllers.chart-controller</a></li><li><a href="tradewc.controllers.main-controller-api.html" class="wiki_link">tradewc.controllers.main-controller</a></li><li><a href="tradewc.controllers.neuralnet-controller-api.html" class="wiki_link">tradewc.controllers.neuralnet-controller</a></li><li><a href="tradewc.controllers.observers-api.html" class="wiki_link">tradewc.controllers.observers</a></li><li><a href="tradewc.controllers.prediction-list-controller-api.html" class="wiki_link">tradewc.controllers.prediction-list-controller</a></li><li><a href="tradewc.controllers.query-table-controller-api.html" class="wiki_link">tradewc.controllers.query-table-controller</a></li><li><a href="tradewc.controllers.start-controller-api.html" class="wiki_link">tradewc.controllers.start-controller</a></li><li><a href="tradewc.controllers.stock-data-controller-api.html" class="wiki_link">tradewc.controllers.stock-data-controller</a></li><li><a href="tradewc.controllers.stock-table-controller-api.html" class="wiki_link">tradewc.controllers.stock-table-controller</a></li><li><a href="tradewc.main.core-api.html" class="wiki_link">tradewc.main.core</a></li><li><a href="tradewc.stock-model.stock-data-api.html" class="wiki_link">tradewc.stock-model.stock-data</a></li><li><a href="tradewc.views.generic-comp-api.html" class="wiki_link">tradewc.views.generic-comp</a></li><li><a href="tradewc.views.main-view-api.html" class="wiki_link">tradewc.views.main-view</a></li><li><a href="tradewc.views.start-view-api.html" class="wiki_link">tradewc.views.start-view</a></li><li><a href="tradewc.views.stock-config-view-api.html" class="wiki_link">tradewc.views.stock-config-view</a></li><li><a href="tradewc.views.table-view-api.html" class="wiki_link">tradewc.views.table-view</a></li>
+      </ul>
+    </div>
+    
+    <a href="http://clojure.org" class="wiki_link">Clojure Home</a>
+  </div>
+</div>
+</div>
+      <div id="rightcolumn">
+	<div id="Content">
+	  <div class="contentBox"><div class="innerContentBox">
+              <div id="content_view" class="wiki wikiPage">
+                <div id="right-sidebar"><div id="toc">
+  <h1 class="nopad">Table of Contents</h1>
+  <div style="margin-left: 1em;" class="toc-section">
+    <a href="#toc0">Overview</a>
+    <div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/add-to-predictions">add-to-predictions</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/convert-stock-data">convert-stock-data</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/create-prediction">create-prediction</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/get-prediction-at">get-prediction-at</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/get-predictions">get-predictions</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/get-stock-data-as-map">get-stock-data-as-map</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/get-stockmarket-data-src">get-stockmarket-data-src</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/load-json-map">load-json-map</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/load-predictions">load-predictions</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/map-to-json">map-to-json</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/query-stock-symbol">query-stock-symbol</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/remove-prediction">remove-prediction</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/replace-predict">replace-predict</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/save-predictions">save-predictions</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/save-to">save-to</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/update-actual-eval">update-actual-eval</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/update-predicted-eval">update-predicted-eval</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#tradewc.stock-model.stock-data/update-prediction">update-prediction</a>
+    </div>
+    <br />
+  </div>
+</div>
+</div>
+                <div id="content-tag"><h1 id="overview">API for <span id="namespace-name">tradewc.stock-model.stock-data</span>
+  - <span id="header-project">Trade With Confidence (TWC)</span> <span id="header-version"></span>
+  </h1>
+
+<br />Full namespace name: <span id="long-name">tradewc.stock-model.stock-data</span>
+<p></p>
+<h2>Overview</h2>
+<pre id="namespace-docstr"></pre>
+
+
+<br />
+<h2>Public Variables and Functions</h2>
+<div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/add-to-predictions">add-to-predictions</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (add-to-predictions col prediction)
+</pre>
+  <pre id="var-docstr">Adds a prediction to the end of a list col.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/convert-stock-data">convert-stock-data</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (convert-stock-data lst)
+</pre>
+  <pre id="var-docstr">Converts any Java map to a Clojure map.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/create-prediction">create-prediction</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (create-prediction stock symbol date-from date-to stock-data predicted)
+</pre>
+  <pre id="var-docstr">Creates a Stock defrecord for a stock, consiting of name, symbol, date,
+stock-data and the predicted value.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/get-prediction-at">get-prediction-at</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (get-prediction-at col pos)
+</pre>
+  <pre id="var-docstr">Gets a stock prediction from a list col at a specific position pos.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/get-predictions">get-predictions</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (get-predictions)
+</pre>
+  <pre id="var-docstr">Returns all stock predictions from the current list.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/get-stock-data-as-map">get-stock-data-as-map</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (get-stock-data-as-map stock-symbol date-from date-to)
+</pre>
+  <pre id="var-docstr">Gets a map of stock-data from a stock-symbol, date-from and date-to.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/get-stockmarket-data-src">get-stockmarket-data-src</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (get-stockmarket-data-src stock-symbol date-from date-to)
+</pre>
+  <pre id="var-docstr">Returns a stock market data source given a stock symbol and date-from and date-to.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/load-json-map">load-json-map</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (load-json-map complete-file-path)
+</pre>
+  <pre id="var-docstr">Loads a Clojure data structure from a JSON file at a specified file-path.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/load-predictions">load-predictions</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (load-predictions file-path)
+</pre>
+  <pre id="var-docstr">Loads data predictions from a specified file-path, overwrites the current list of predictions.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/map-to-json">map-to-json</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (map-to-json data-as-map complete-file-path)
+</pre>
+  <pre id="var-docstr">Writes a Clojure data structure to JSON file at a specified file-path.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/query-stock-symbol">query-stock-symbol</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (query-stock-symbol symbol)
+</pre>
+  <pre id="var-docstr">Returns a vector of maps containing stock-data matching a particular stock-symbol given a symbol to query</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/remove-prediction">remove-prediction</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (remove-prediction col pos)
+</pre>
+  <pre id="var-docstr">Removes a prediction from a list col at a specified position pos.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/replace-predict">replace-predict</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (replace-predict orig-predict new-predict)
+</pre>
+  <pre id="var-docstr">Replaces an original prediciton orig-predict with a new prediction new-predict.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/save-predictions">save-predictions</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (save-predictions predictions file-path)
+</pre>
+  <pre id="var-docstr">Saves data predictions to a specified file-path.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/save-to">save-to</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (save-to data file-path)
+</pre>
+  <pre id="var-docstr">Saves any data to a specified file-path</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/update-actual-eval">update-actual-eval</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (update-actual-eval col pos data)
+</pre>
+  <pre id="var-docstr"></pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/update-predicted-eval">update-predicted-eval</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (update-predicted-eval col pos data)
+</pre>
+  <pre id="var-docstr"></pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="tradewc.stock-model.stock-data/update-prediction">update-prediction</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (update-prediction col pos predicted-val)
+</pre>
+  <pre id="var-docstr">Updates a prediction value from a list col at a specified position pos with predicted-val.</pre>
+  
+  
+  
+</div>
+
+
+</div>
+              </div>
+            </div>
+          </div>
+	</div>
+	<div id="foot">
+	  <div style="text-align: center;" id="copyright">No copyright info </div>
+	</div>
+      </div>
+      <div id="DesignedBy">Logo &amp; site design by <a title="Visit Tom Hickey's website." href="http://www.tomhickey.com">Tom Hickey</a>.<br />
+      Clojure auto-documentation system by Tom Faulhaber.</div>
+    </div>
+    <!-- /AllContentContainer -->
+  </body>
+
+</html>
