@@ -1,6 +1,6 @@
 # Trade With Confidence
 
-Trade With Confidence - Stock price prediction tool using neural networks in Java Swing and Clojure
+Stock price prediction tool using neural networks in Java Swing and Clojure
 
 ## License
 
