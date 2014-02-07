@@ -14,8 +14,8 @@
   :aot [tradewc.main.core]
   :jar-name "tradewc.jar"
   :uberjar-name "tradewc-standalone.jar"
-  :source-paths ["src/tradewc"]
-  :java-source-path "src/java"
+  :source-paths ["src/"]
+  :java-source-paths ["src/java"]
   :javac-options {:debug "true"}
   :manifest {"SplashScreen-Image" "images/splash.png"}
   ;; You can set JVM-level options here.
